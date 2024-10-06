@@ -1,0 +1,30 @@
+import java.io.OutputStream;
+
+public class EscrituraPB {
+	public static void main(String[] args) {
+
+	    ProcessBuilder pb = new ProcessBuilder("java", "LecturaPB.java");
+	    String linea = "";
+
+	    // Redireccionamos la salida por error con la salida correcta
+	    pb.redirectErrorStream(true);
+
+	    try {
+	        Process p = pb.start();
+
+	        // Nos comunicamos con el proceso para introducir la entrada
+	        OutputStream o = p.getOutputStream();
+	        o.write("Hola clase \n".getBytes());
+	        // Liberamos el buffer de escritura
+	        o.flush();
+
+	        int revisoError = p.waitFor();
+	        System.out.println("Error igual a: " + revisoError);
+
+	    } catch (Exception e) {
+	        System.out.println("Error en: ");
+	        e.printStackTrace();
+	    }
+	}
+
+}

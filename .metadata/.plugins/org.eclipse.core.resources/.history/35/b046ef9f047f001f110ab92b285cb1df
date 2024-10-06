@@ -1,0 +1,56 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+
+public class leerClientes {
+    public static void main(String[] args) {
+        File fichero = new File("clientes.dat");
+        File salida = new File("hospitales.txt");
+        final int LONGITUD_NOMBRE = 25; // Longitud fija para el nombre
+        final int LONGITUD_DIRECCION = 35; // Longitud fija para la dirección
+
+        try (RandomAccessFile file = new RandomAccessFile(fichero, "r");
+             BufferedWriter writer = new BufferedWriter(new FileWriter(salida))) {
+
+            while (file.getFilePointer() < file.length()) {
+                int codigo = file.readInt();
+
+                // Leer el nombre
+                char[] nombreChars = new char[LONGITUD_NOMBRE];
+                for (int j = 0; j < LONGITUD_NOMBRE; j++) {
+                    nombreChars[j] = file.readChar();
+                }
+                String nombre = new String(nombreChars).trim(); // Elimina espacios en blanco
+
+                // Leer la dirección
+                char[] direccionChars = new char[LONGITUD_DIRECCION];
+                for (int j = 0; j < LONGITUD_DIRECCION; j++) {
+                    direccionChars[j] = file.readChar();
+                }
+                String direccion = new String(direccionChars).trim(); // Elimina espacios en blanco
+
+                int numCamas = file.readInt();
+                double presupuesto = file.readDouble();
+
+                // Escribir los datos en el archivo de salida
+                writer.write("Código: " + codigo);
+                writer.newLine();
+                writer.write("Nombre: " + nombre);
+                writer.newLine();
+                writer.write("Dirección: " + direccion);
+                writer.newLine();
+                writer.write("Número de camas: " + numCamas);
+                writer.newLine();
+                writer.write("Presupuesto: " + presupuesto);
+                writer.newLine();
+                writer.newLine();
+            }
+        } catch (EOFException e) {
+            break; // Salir del bucle al alcanzar el final del archivo
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
