@@ -1,0 +1,9 @@
+package VocalNumeroUsuario;
+
+public class Numero {
+	private Vocal vocal;
+	public Numero(Vocal vocal) {
+		this.vocal = vocal;
+	}
+	
+}

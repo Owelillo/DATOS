@@ -1,0 +1,16 @@
+
+public class Vocal {
+	private static Vocal instancia;
+	private Vocal() {
+		
+	}
+	
+	public static Vocal getInstancia() {
+		if(instancia == null) {
+			instancia = new Vocal();
+		}
+		else {
+			return instancia;
+		}
+	}
+}

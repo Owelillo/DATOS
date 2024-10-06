@@ -1,0 +1,20 @@
+package Procesos;
+
+public class calculadoraCutre {
+
+	public static void main(String[] args) {
+		if(args.length > 3 || args.length < 3) {
+			System.out.println("Tienes que poner solamente 3 argumentos, paleto.");
+		}
+		else {
+			double numero1 = Double.parseDouble(args[0]);
+			double numero2 = Double.parseDouble(args[2]);
+			String operador = "";
+			switch (operador){
+			case "+":
+				
+			}
+		}
+	}
+
+}

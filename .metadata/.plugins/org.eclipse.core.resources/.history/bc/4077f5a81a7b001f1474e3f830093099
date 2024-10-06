@@ -1,0 +1,13 @@
+package VocalNumeroUsuario;
+
+public class Numero {
+	private Vocal vocal;
+	private Usuario usuario;
+	private Terminal terminal;
+	public Numero(Vocal vocal, Terminal terminal) {
+		this.vocal = vocal;
+		this.terminal = terminal;
+		usuario = new Usuario();
+	}
+	
+}

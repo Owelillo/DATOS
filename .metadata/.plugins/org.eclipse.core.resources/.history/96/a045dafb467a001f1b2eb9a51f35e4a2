@@ -1,0 +1,16 @@
+
+public class Numero {
+	private static Numero instancia;
+	private Numero() {
+		
+	}
+	
+	public static Numero getInstancia() {
+		if(instancia == null) {
+			instancia = new Numero();
+		}
+		else {
+			return instancia;
+		}
+	}
+}

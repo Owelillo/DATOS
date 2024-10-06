@@ -1,0 +1,9 @@
+package VocalNumeroUsuario;
+
+public class Numero {
+	private static Numero instancia;
+	public Numero() {
+		
+	}
+	
+}

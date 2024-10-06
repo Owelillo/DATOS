@@ -1,0 +1,20 @@
+package ejercicio1;
+import java.io.*;
+
+public class BufferedWritter {
+	public static void main(String[] args) {
+		try {
+			BufferedWriter fichero = new BufferedWriter(new FileWriter("src//Mifichero.txt"));
+			int numero = 0;
+			String linea;
+			for(int i =1; i<11; i++) {
+				fichero.write(linea);
+				fichero.newLine();
+			}
+		}
+		catch{
+			
+		}
+		
+	}
+}

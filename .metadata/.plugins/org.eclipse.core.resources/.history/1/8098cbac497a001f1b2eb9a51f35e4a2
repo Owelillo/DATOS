@@ -1,0 +1,31 @@
+package VocalNumeroUsuario;
+import java.util.Random;
+public class Vocal {
+	private static Vocal instancia;
+	private Terminal terminal;
+	private Numero numero;
+	public Vocal() {
+		Terminal terminal = new Terminal();
+	}
+	
+	public static Vocal getInstancia() {
+		if(instancia == null) {
+			instancia = new Vocal();
+		}
+			return instancia;
+	}
+	
+	public char sacarVocal() {
+		char vocalAleatoria;
+
+		char[] vocal = {
+				'a', 'e', 'i', 'o', 'u',
+				'A', 'E', 'I', 'O', 'U',
+		};
+		Random random = new Random();
+		vocalAleatoria = vocal[random.nextInt(vocal.length)];
+		System.out.println(vocalAleatoria);
+		return vocalAleatoria;
+		
+	}
+}

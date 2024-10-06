@@ -1,0 +1,9 @@
+package inmobiliario;
+
+public class Vista {
+	private Controlador ctr;
+	public Vista(Controlador ctrOriginal) {
+		this.ctr = ctrOriginal;
+		
+	}
+}

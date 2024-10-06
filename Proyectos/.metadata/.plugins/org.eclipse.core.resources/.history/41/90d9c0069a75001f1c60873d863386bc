@@ -1,0 +1,18 @@
+package inmobiliario;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Controlador {
+	private Vista vista;
+	private ArrayList<Casa>lista_casas;
+	public Controlador() {
+		vista = new Vista(this);
+		iniciar();
+	}
+
+	private void iniciar() {
+		Scanner sc = new Scanner(System.in);
+		
+		sc.close();
+	}
+}

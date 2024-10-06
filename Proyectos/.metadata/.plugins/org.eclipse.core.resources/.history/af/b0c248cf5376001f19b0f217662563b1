@@ -1,0 +1,108 @@
+package inmobiliario;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Controlador {
+	private Vista vista;
+	private ArrayList<Casa>lista_casas;
+	Scanner scanner = new Scanner(System.in);
+	public Controlador() {
+		vista = new Vista(this);
+		iniciar();
+		vista.mensajeInicial();
+	}
+
+	private void iniciar() {
+		int seleccion;
+		seleccion = vista.menuPrincipal();
+		
+		switch (seleccion) {
+		case 0:
+			System.exit(0);
+			break;
+		case 1:
+			nuevaCasa();
+		case 2:
+			mostrarCasas();
+			break;
+		case 3:
+			eliminarCasa();
+			break;
+		case 4:
+			filtrarCasa();
+			break;
+		}
+	}
+
+	private void filtrarCasa() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void eliminarCasa() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void mostrarCasas() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void nuevaCasa() {
+
+		while(true) {
+			int numeroMetros = 0;
+			int numeroPrecio = 0;
+			int numeroPlanta = 0;
+			boolean isGaraje = true;
+			int numeroId = 0;
+		System.out.println("Escribe los datos de la casa");
+		
+		System.out.println("Metros: ");
+		if(scanner.hasNextInt()) {
+				numeroMetros = scanner.nextInt();
+				if(numeroMetros > 0) {
+					numeroMetros = scanner.nextInt();
+				}
+				else {
+					System.out.println("Elige un número válido");
+				}
+		}
+		
+		System.out.println("precio: ");
+		if(scanner.hasNextInt()) {
+			numeroPrecio = scanner.nextInt();
+			if(numeroPrecio > 0) {
+				numeroPrecio= scanner.nextInt();
+			}
+			else {
+				System.out.println("Elige un número válido");
+			}
+	}
+		System.out.println("planta: ");
+		if(scanner.hasNextInt()) {
+			numeroPlanta= scanner.nextInt();
+			if(numeroPlanta > 0) {
+			}
+			else {
+				System.out.println("Elige un número válido");
+			}
+	}
+		System.out.println("garaje: ");
+		if(scanner.hasNextBoolean()) {
+			isGaraje= scanner.nextBoolean();
+	}
+		System.out.println("identificador: ");
+		if(scanner.hasNextInt()) {
+			numeroId= scanner.nextInt();
+			if(numeroId > 0) {
+			}
+			else {
+				System.out.println("Elige un número válido");
+			}
+	}
+		Casa casa = new Casa(numeroMetros, numeroPrecio, numeroPlanta, isGaraje, numeroId);
+		}
+	}
+}

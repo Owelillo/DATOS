@@ -1,0 +1,14 @@
+package inmobiliario;
+
+public class Controlador {
+	private Vista vista;
+	
+	public Controlador() {
+		vista = new Vista(this);
+		iniciar();
+	}
+
+	private void iniciar() {
+		
+	}
+}

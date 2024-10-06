@@ -1,0 +1,33 @@
+package ejercicio1;
+import java.io.*;
+
+public class BufferedWritter {
+	public static void main(String[] args) {
+		try {
+			BufferedReader fichero = new BufferedReader(new FileReader("src//ejercicio1//Mifichero.txt"));
+			File apuntador = new File ("src//ejercicio1//CopiaMiFichero.txt");
+			String linea;
+			int numero = 1;
+			while((linea = fichero.readLine()) != null && numero <11) {
+				for(int i = 1; i<11; i++) {
+					for(int caracter = 0; caracter <= linea.length(); caracter++) {
+						char c = linea.charAt(caracter);
+						if(c == 'a') {
+							c = 'o';
+						}
+						if(c == 'o') {
+							c = 'a';
+						}
+					}
+					System.out.println(linea);	
+				}
+				}			
+		}
+		catch(FileNotFoundException fn){
+			System.out.println("No se encuentra el fichero");
+			} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

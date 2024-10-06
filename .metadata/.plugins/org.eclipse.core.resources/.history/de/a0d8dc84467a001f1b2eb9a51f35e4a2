@@ -1,0 +1,11 @@
+
+public class Terminal {
+	private static Terminal instancia;
+	private Numero numero;
+	private Vocal vocal;
+	private Usuario usuario;
+
+		private Terminal() {
+			
+	}
+}

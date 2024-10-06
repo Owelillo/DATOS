@@ -1,0 +1,22 @@
+package ejercicio1;
+import java.io.*;
+public class ficherosBinarios {
+
+	public static void main(String[] args) {
+		String nombres[] = {"Bea", "Manuel", "Alfonso", "Julio", "Ana", "María"};
+		int edades[] = {19, 16, 12, 16, 14, 18};
+		
+		File fichero = new File("menores.dat");
+		File fichero1 = new File("mayores.dat");
+		
+		try {
+			FileOutputStream fileout = new FileOutputStream(fichero);
+			DataOutputStream dataOS = new DataOutputStream(fileout);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("Archivo no encontrado");
+		}
+
+	}
+
+}

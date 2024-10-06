@@ -1,0 +1,40 @@
+package inmobiliario;
+import java.util.Scanner;
+public class Vista {
+	private Controlador ctr;
+	private Scanner scanner = new Scanner(System.in);
+	int select;
+	public Vista(Controlador ctrOriginal) {
+		this.ctr = ctrOriginal;
+		
+	}
+	public void mensajeInicial() {
+		System.out.println("Bienvenido a mi vista");
+		System.out.println("------ ---- --------- ---------");
+	}
+	public int menuPrincipal() {
+		while(true) {
+			System.out.println("Hola,  elige una acción a llevar a cabo");
+			System.out.println("1) Introducir nueva casa");
+			System.out.println("2) Mostrar todas las casas");
+			System.out.println("3) Eliminar una casa");
+			System.out.println("4) Filtrar casas");
+			System.out.println("0) Salir de la app");
+			
+			if(scanner.hasNextInt()) {
+				select = scanner.nextInt();
+				if(select >= 0 || select <= 4) {
+					break;
+				}
+				else {
+					System.out.println("Por favor, seleccione una opción válida");
+				}
+			}
+			else {
+				System.out.println("Por favor, selecciona un número válido");
+			}
+			
+		}
+	}
+	
+}

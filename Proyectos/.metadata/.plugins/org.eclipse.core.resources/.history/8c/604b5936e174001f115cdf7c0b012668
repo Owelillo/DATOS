@@ -1,0 +1,25 @@
+package inmobiliario;
+
+public class Casa {
+	private int metros;
+	private float precio;
+	private int planta;
+	private boolean garaje;
+	private int identificador;
+	
+	public Casa() {
+		this.metros = 0;
+		this.precio = 0;
+		this.planta = 0;
+		this.garaje = true;
+		this.identificador = 0;
+	}
+	
+	public void getInfoCasa() {
+		System.out.println("Metros: " + metros + "Precio: " + precio + "Planta: " planta + "¿Hay Garaje?: " + garaje + "Identificador: " + identificador);
+	}
+	
+	public void setInfoCasa(int nuevometro, float nuevoprecio, int nuevaplanta, boolean nuevogaraje, int nuevoid) {
+		this.
+	}
+}

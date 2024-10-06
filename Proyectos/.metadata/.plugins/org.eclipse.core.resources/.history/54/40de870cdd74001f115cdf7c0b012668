@@ -1,0 +1,8 @@
+package inmobiliario;
+
+public class Controlador {
+	public Controlador() {
+		
+		
+	}
+}

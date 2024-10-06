@@ -1,0 +1,10 @@
+package ejercicio1;
+import java.io.*;
+
+public class BufferedWritter {
+	public static void main(String[] args) {
+		try {
+			BufferedWitter fichero = new BufferedWritter(new FileWritter("src//Mifichero.txt");
+		}
+	}
+}

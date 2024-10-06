@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+C:\Users\Rinex\OneDrive - Educacyl\GabrielRojasBarredo\.metadata\.plugins\org.eclipse.jdt.core
+2277445513.index
+3099995013.index
+1865797976.index
+2858646806.index

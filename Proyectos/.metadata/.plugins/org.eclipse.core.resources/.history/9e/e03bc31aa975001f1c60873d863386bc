@@ -1,0 +1,31 @@
+package inmobiliario;
+import java.util.ArrayList;
+
+public class Controlador {
+	private Vista vista;
+	private ArrayList<Casa>lista_casas;
+	public Controlador() {
+		vista = new Vista(this);
+		iniciar();
+		vista.mensajeInicial();
+	}
+
+	private void iniciar() {
+		int seleccion;
+		seleccion = vista.menuPrincipal();
+		
+		switch (seleccion) {
+		case 0:
+			System.exit(0);
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		}
+	}
+}

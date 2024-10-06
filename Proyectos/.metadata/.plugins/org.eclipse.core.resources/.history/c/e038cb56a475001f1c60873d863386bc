@@ -1,0 +1,46 @@
+package inmobiliario;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Controlador {
+	private Vista vista;
+	private int numero;
+	private ArrayList<Casa>lista_casas;
+	public Controlador() {
+		vista = new Vista(this);
+		iniciar();
+		this.numero = -1;
+	}
+
+	private void iniciar() {
+		System.out.println("Hola,  elige una acción a llevar a cabo");
+		System.out.println("1) Introducir nueva casa");
+		System.out.println("2) Mostrar todas las casas");
+		System.out.println("3) Eliminar una casa");
+		System.out.println("4) Filtrar casas");
+		System.out.println("0) Salir de la app");
+		Scanner sc = new Scanner(System.in);
+		while(numero < 0 || numero > 4) {
+			System.out.println("Introduce un numero del 0 al 4");
+			if(sc.hasNextInt()) {
+				numero = sc.nextInt();
+				if(numero >= 0 || numero <= 4) {
+					if(numero == 0) {
+						System.out.println("Has elegido el numero 0");
+					}
+					if(numero == 1) {
+						System.out.println("Has elegido el numero 1");
+					}
+					if(numero == 2) {
+						System.out.println("Has elegido el numero 2");
+					}
+					if(numero == 3) {
+						System.out.println("Has elegido el numero 3");
+					}
+					if(numero == 4) {
+					}
+				}
+			}
+		}
+	}
+}

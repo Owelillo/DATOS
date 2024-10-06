@@ -1,0 +1,20 @@
+package ejercicio1;
+import java.io.*;
+
+public class BufferedWritter {
+	public static void main(String[] args) {
+		try {
+			BufferedReader fichero = new BufferedReader(new FileReader("Mifichero.txt"));
+			String linea;
+			while((linea = fichero.readLine()) != null) {
+				System.out.println(linea);
+			}
+		}
+		catch(FileNotFoundException fn){
+			System.out.println("No se encuentra el fichero");
+			} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}
