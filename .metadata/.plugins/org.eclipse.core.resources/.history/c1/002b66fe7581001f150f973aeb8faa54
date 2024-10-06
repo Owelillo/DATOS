@@ -1,9 +1,0 @@
-package Datos;
-
-public class lecturaPB {
-
-	public static void main(String[] args) {
-		BufferedReader
-	}
-
-}
