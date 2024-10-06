@@ -1,0 +1,31 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+public class introducirDatos {
+    public static void main(String[] args) {
+        File fichero = new File("clientes.dat");
+
+        // Datos de los hospitales
+        int[] codigo = {210, 315, 250};
+        String[] nombre = {"Gregorio Marañón", "HM Hospital Universitario", "12 de Octubre"};
+        String[] direccion = {"C. Dr. Esquerdo, 46", "Pl. del Conde del Valle de Súchil, 16,", "Av. de Córdoba, s/n"};
+        int[] numCamas = {1671, 1312, 1296};
+        double[] presupuesto = {22252257.54, 3253254.78, 52542547.8};
+
+        try (RandomAccessFile file = new RandomAccessFile(fichero, "rw")) {
+            for (int i = 0; i < codigo.length; i++) {
+                file.writeInt(codigo[i]);
+                file.writeUTF(nombre[i]);
+                file.writeUTF(direccion[i]);
+                file.writeInt(numCamas[i]);
+                file.writeDouble(presupuesto[i]);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

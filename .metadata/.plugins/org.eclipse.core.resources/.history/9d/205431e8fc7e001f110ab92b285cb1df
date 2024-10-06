@@ -1,0 +1,24 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+public class introducirDatos{
+	public static void main(String[] args) throws FileNotFoundException{
+		File fichero = new File("clientes.dat");
+		try(RandomAccessFile file = new RandomAccessFile(fichero, "rw")){
+			
+			Hospital[] clientes = {
+					new Hospital(210, "Gregorio Marañón", "C. Dr. Esquerdo, 46", 1671, 22252257.54),
+					new Hospital(315, "HM Hospital Universitario", "Pl. del Conde del Valle de Súchil, 16,", 1312, 3253254.78),
+					new Hospital(250, "12 de Octubre", "Av. de Córdoba, s/n", 1296, 52542547.8),
+			
+			};
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+}

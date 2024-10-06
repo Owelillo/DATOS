@@ -1,0 +1,49 @@
+package Procesos;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+
+public class guardarProcessBuilder {
+    public static void main(String[] args) {
+        // Definir el comando a ejecutar
+        ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", "tasklist /svc /fi \"imagename eq svchost.exe\"");
+        
+        try {
+            // Iniciar el proceso
+            Process process = processBuilder.start();
+            
+            // Leer la salida del proceso (la lista de servicios)
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String linea;
+            
+            // Crear o abrir el archivo SVCHOST.TXT para escribir
+            PrintWriter writer = new PrintWriter(new FileOutputStream("SVCHOST.TXT"));
+            
+            // Leer cada línea de la salida del proceso y escribirla en el archivo
+            while ((linea = reader.readLine()) != null) {
+                writer.println(linea);
+            }
+            
+            // Cerrar el archivo
+            writer.close();
+            
+            // Esperar a que el proceso termine y obtener el código de salida
+            int exitVal = process.waitFor();
+            System.out.println("Proceso terminado con el código de salida: " + exitVal);
+            
+        } catch (FileNotFoundException e) {
+            System.out.println("No se pudo encontrar o crear el archivo.");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Error al ejecutar el comando.");
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            System.out.println("Error al esperar la finalización del proceso.");
+            e.printStackTrace();
+        }
+    }
+}
