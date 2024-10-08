@@ -13,6 +13,7 @@ public class escribirFichero{
 		try {
 		Peliculas pelicula;
 		File fichero = new File("peliculas.dat");
+		fichero.createNewFile();
 		FileOutputStream fos = new FileOutputStream(fichero);
 		ObjectOutputStream output = new ObjectOutputStream(fos);
 		String titulos[] = { "El libro de la selva", "Lo que el viento se llevó", "Tiempos modernos" };

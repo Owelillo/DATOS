@@ -1,15 +1,13 @@
-package ficherosBinariosFileInputOutputYCondicionMenoresYMayores;
+package ficherosBinarios;
 import java.io.*;
 public class ficherosBinarios {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		String nombres[] = {"Bea", "Manuel", "Alfonso", "Julio", "Ana", "María"};
 		int edades[] = {19, 16, 12, 16, 14, 18};
 		
 		File fichero = new File("menores.dat");
 		File fichero1 = new File("mayores.dat");
-		fichero.createNewFile();
-		fichero1.createNewFile();
 		
 		try {
 			FileOutputStream fileout = new FileOutputStream(fichero);

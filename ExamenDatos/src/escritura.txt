@@ -1,0 +1,12 @@
+Esta es la primera línea del archivo.
+Aquí va la segunda línea.
+ 
+Continuamos con la quinta línea.
+Esta es la sexta línea del archivo.
+ 
+Esta es la novena línea del archivo.
+Finalmente, la décima línea del archivo.
+ 
+La línea trece se encuentra aquí.
+Esta es la catorceava línea del archivo.
+ 
