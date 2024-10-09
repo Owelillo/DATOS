@@ -2,23 +2,47 @@ package ejercicioSerializableObjetos;
 
 import java.io.EOFException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class escribirFichero{
-
 	public static void main(String[] args) throws IOException {
 		try {
 		Peliculas pelicula;
 		File fichero = new File("peliculas.dat");
-		fichero.createNewFile();
+		FileInputStream fis = new FileInputStream(fichero);
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		while(true) {
+			pelicula = (Peliculas) ois.readObject();
+			System.out.printf("titulos: %s, fechas: %s, precios: %.2f, duraciones: %d", 
+					pelicula.getTitulo(), pelicula.getFecha(), pelicula.getprecio(), pelicula.getDuracion());
+		}
+
+		} catch(FileNotFoundException e) {
+			System.out.println("ARCHIVO NO ENCONTRADO");
+		}
+		catch(ClassNotFoundException e) {
+			System.out.println("CLASE NO ENCONTRADA");
+		}
+		catch(EOFException e) {
+			System.out.println("FIN DEL ARCHIVO");
+		}
+		escribirFichero();
+
+	}
+	public static void escribirFichero() {
+		try {
+		Peliculas pelicula;
+		File fichero = new File("peliculas.dat");
 		FileOutputStream fos = new FileOutputStream(fichero);
 		ObjectOutputStream output = new ObjectOutputStream(fos);
 		String titulos[] = { "El libro de la selva", "Lo que el viento se llevó", "Tiempos modernos" };
 		String fechas[] = { "1-1-2024", "1-1-2015", "1-1-1995" };
-		Double precios[] = { 6.20, 7.20, 9.20 };
+		Double precios[] = {6.20,7.20,9.20};
 		int duraciones[] = {135, 135, 87};
 
 		for (int i = 0; i < titulos.length; i++) {
@@ -28,11 +52,9 @@ public class escribirFichero{
 		
 		output.close();
 		}catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("ARCHIVO NO ENCONTRADO");
 		} catch (EOFException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("FIN DEL ARCHIVO");
 		}
 		catch(IOException e2) {
 			e2.printStackTrace();

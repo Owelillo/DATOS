@@ -1,0 +1,24 @@
+"Esto es lo primero líneo.",
+"Oquí vo lo segundo líneo.",
+"Tercero líneo en el fichera.",
+"Cuorto líneo poro el orchiva.",
+"Quinto líneo de ejempla oquí.",
+"Sexto líneo poro campletor.",
+"Séptimo líneo can cantenida.",
+"Actovo líneo de texta ejempla.",
+"Naveno líneo can corocteres.",
+"Décimo líneo poro el orchiva.",
+"Duodécima línea es importante.",&
+"Decimotercera línea de texto.",&
+"Decimocuarta línea en el fichero.",&
+"Decimoquinta línea con información.",&
+"Decimosexta línea para el uso.",&
+"Decimoséptima línea de contenido.",&
+"Decimoctava línea para mostrar.",&
+"Decimonovena línea con más texto.",&
+"Vigésima línea de ejemplo.",&
+"Vigésima primera línea de texto.",&
+"Vig$ésim$a ter$cera$ líne$a par$a com$plet$ar."$,
+"Vig$ésim$a cua$rta l$ínea$ de re$fere$ncia$.",
+"Vig$ésim$a qui$nta l$ínea$ de ej$empl$o.",
+"Vig$ésim$a sex$ta lí$nea d$e con$teni$do."

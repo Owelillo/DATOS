@@ -2,11 +2,16 @@
 <section name="Workbench">
 	<section name="ImportExportAction">
 		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.FileSystem"/>
+		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.ui.wizards.export.FileSystem"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
-			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
-			<item value="org.eclipse.oomph.importWizards"/>
-			<item value="org.eclipse.mylyn.tasks.ui.wizards.import.category"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.equinox.p2.category"/>
+			<item value="org.eclipse.jdt.ui.Java"/>
+			<item value="org.eclipse.debug.ui"/>
+			<item value="org.eclipse.mylyn.tasks.ui.wizards.export.category"/>
 		</list>
 		<section name="ImportExportWizard.dialogBounds">
 			<item key="DIALOG_X_ORIGIN" value="1026"/>
@@ -16,59 +21,58 @@
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
 	</section>
+	<section name="FileSystemExportWizard">
+		<item key="WizardFileSystemResourceExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID" value="false"/>
+		<item key="WizardFileSystemResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="false"/>
+		<item key="WizardFileSystemResourceExportPage1.STORE_RESOLVE_LINKED_RESOURCES_ID" value="false"/>
+		<list key="WizardFileSystemResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\Rinex\Desktop"/>
+			<item value="C:\Users\Rinex\OneDrive - Educacyl\PASAR CONTENT"/>
+			<item value="C:\Users\Rinex\OneDrive - Educacyl\PASAR CONTENT\MINISTERIOHECHO"/>
+		</list>
+		<section name="FileSystemExportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="1026"/>
+			<item key="DIALOG_Y_ORIGIN" value="371"/>
+			<item key="DIALOG_WIDTH" value="747"/>
+			<item key="DIALOG_HEIGHT" value="612"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
 	<section name="ZipFileImportWizard">
-	</section>
-	<section name="PropertyDialog.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="748"/>
-		<item key="DIALOG_Y_ORIGIN" value="338"/>
-		<item key="DIALOG_WIDTH" value="1081"/>
-		<item key="DIALOG_HEIGHT" value="556"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
-	</section>
-	<section name="WorkbenchPreferenceDialog.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="971"/>
-		<item key="DIALOG_Y_ORIGIN" value="338"/>
-		<item key="DIALOG_WIDTH" value="756"/>
-		<item key="DIALOG_HEIGHT" value="803"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
-	</section>
-	<section name="WorkbenchPreferenceDialog">
-		<item key="DIALOG_X_ORIGIN" value="151"/>
-		<item key="DIALOG_Y_ORIGIN" value="101"/>
-		<item key="DIALOG_WIDTH" value="732"/>
-		<item key="DIALOG_HEIGHT" value="919"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
-	</section>
-	<section name="InstallationDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="-167"/>
-		<item key="DIALOG_Y_ORIGIN" value="-181"/>
-		<item key="DIALOG_WIDTH" value="700"/>
-		<item key="DIALOG_HEIGHT" value="738"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
+		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\Rinex\Downloads\BasesDeDatos.jar"/>
+		</list>
+		<section name="ZipFileImportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="1026"/>
+			<item key="DIALOG_Y_ORIGIN" value="371"/>
+			<item key="DIALOG_WIDTH" value="623"/>
+			<item key="DIALOG_HEIGHT" value="550"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
 	</section>
 	<section name="FileSystemImportWizard">
 		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
-			<item value="C:\Users\Rinex\OneDrive - Educacyl\PASAR CONTENT\MinisterioSaludRandomAcessFile"/>
-			<item value="C:\Users\Rinex\OneDrive - Educacyl\PASAR CONTENT\FicherosBinarios"/>
-			<item value="C:\Users\Rinex\OneDrive - Educacyl\PASAR CONTENT\BajoYAltoEjercicioArgs0"/>
+			<item value="C:\Users\Rinex\Desktop\CLASE\DATOS\ExamenDatos"/>
+			<item value="C:\Users\Rinex\Downloads\BasesDeDatos\BaseDeDatos"/>
 		</list>
 		<section name="FileSystemImportWizard.dialogBounds">
 			<item key="DIALOG_X_ORIGIN" value="1026"/>
-			<item key="DIALOG_Y_ORIGIN" value="326"/>
-			<item key="DIALOG_WIDTH" value="805"/>
-			<item key="DIALOG_HEIGHT" value="703"/>
-			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+			<item key="DIALOG_Y_ORIGIN" value="371"/>
+			<item key="DIALOG_WIDTH" value="623"/>
+			<item key="DIALOG_HEIGHT" value="620"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
 	</section>
-	<section name="FileSystemExportWizard">
-		<section name="FileSystemExportWizard.dialogBounds">
-			<item key="DIALOG_X_ORIGIN" value="1026"/>
-			<item key="DIALOG_Y_ORIGIN" value="331"/>
-			<item key="DIALOG_WIDTH" value="805"/>
-			<item key="DIALOG_HEIGHT" value="698"/>
-			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+		</list>
+		<section name="NewWizard.dialogBounds">
 		</section>
 	</section>
 </section>

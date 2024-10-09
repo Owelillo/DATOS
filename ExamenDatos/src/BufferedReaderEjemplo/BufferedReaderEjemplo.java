@@ -10,61 +10,81 @@ import java.io.IOException;
 
 public class BufferedReaderEjemplo {
 
-	public static void main(String[] args) throws IOException {
-		try {
-			File fichero = new File("src//Mifichero.txt");
-			BufferedReader ficheroCopia = new BufferedReader(new FileReader(fichero));
-			BufferedWriter ficheroPegar = new BufferedWriter(new FileWriter("copiaFichero.txt"));
-			String linea;
-			int numeroLinea = 0;
-			String nuevaLinea = ""; 
-			while ((linea = ficheroCopia.readLine()) != null) {
-				while(numeroLinea < 10) {
-				for (char caracter : linea.toCharArray()) {
-					if (caracter == 'a') {
-						caracter = 'o';
-						nuevaLinea = linea + caracter;
-						
-					} else if (caracter == 'A') {
-						caracter = 'O';
-						nuevaLinea = linea + caracter;
+    public static void main(String[] args) throws IOException {
+        try {
+            File fichero = new File("src//Mifichero.txt");
+            BufferedReader ficheroCopia = new BufferedReader(new FileReader(fichero));
+            BufferedWriter ficheroPegar = new BufferedWriter(new FileWriter("src//copiaFichero.txt"));
+            String linea;
+            int numeroLinea = 0;
 
-					} else if (caracter == 'á') {
-						caracter = 'ó';
-						nuevaLinea = linea + caracter;
+            // Primer bloque: Copiar las primeras 10 líneas con reemplazo de caracteres
+            while ((linea = ficheroCopia.readLine()) != null && numeroLinea < 10) {
+                String nuevaLinea = "";
+                int i = 0;
+                while (i < linea.length()) {
+                    char caracter = linea.charAt(i);
+                    // Reemplazos de caracteres
+                    if (caracter == 'a') {
+                        nuevaLinea += 'o';
+                    } else if (caracter == 'A') {
+                        nuevaLinea += 'O';
+                    } else if (caracter == 'o') {
+                        nuevaLinea += 'a';
+                    } else if (caracter == 'O') {
+                        nuevaLinea += 'A';
+                    } else if (caracter == 'á') {
+                        nuevaLinea += 'ó';
+                    } else if (caracter == 'Á') {
+                        nuevaLinea += 'Ó';
+                    } else if (caracter == 'ó') {
+                        nuevaLinea += 'á';
+                    } else if (caracter == 'Ó') {
+                        nuevaLinea += 'Á';
+                    } else {
+                        nuevaLinea += caracter; // Mantener el carácter original si no es relevante
+                    }
+                    i++;
+                }
+                ficheroPegar.write(nuevaLinea);
+                ficheroPegar.newLine();
+                numeroLinea++;
+            }
 
-					} else if (caracter == 'Á') {
-						caracter = 'Ó';
-						nuevaLinea = linea + caracter;
+            // Segundo bloque: Copiar las siguientes 10 líneas con un '&' al final
+            while ((linea = ficheroCopia.readLine()) != null && numeroLinea < 20) {
+                ficheroPegar.write(linea + "&"); // Añadir '&' al final de la línea
+                ficheroPegar.newLine();
+                numeroLinea++;
+            }
 
-					}
-					if (caracter == 'o') {
-						caracter = 'a';
-						nuevaLinea = linea + caracter;
+            // Tercer bloque: Copiar las últimas 5 líneas introduciendo '$' cada 4 caracteres
+            while ((linea = ficheroCopia.readLine()) != null && numeroLinea < 25) {
+                String nuevaLinea = "";
+                int count = 0; // Contador para caracteres no espacios
+                for (int i = 0; i < linea.length(); i++) {
+                    char caracter = linea.charAt(i);
+                    if (caracter != ' ') {
+                        count++;
+                        nuevaLinea += caracter; // Agregar el carácter original
+                        // Añadir '$' cada 4 caracteres no espacios
+                        if (count % 4 == 0) {
+                            nuevaLinea += '$';
+                        }
+                    } else {
+                        nuevaLinea += caracter; // Mantener el espacio
+                    }
+                }
+                ficheroPegar.write(nuevaLinea);
+                ficheroPegar.newLine();
+                numeroLinea++;
+            }
 
-					} else if (caracter == 'O') {
-						caracter = 'A';
-						nuevaLinea = linea + caracter;
-
-					} else if (caracter == 'ó') {
-						caracter = 'á';
-						nuevaLinea = linea + caracter;
-
-					} else if (caracter == 'Ó') {
-						caracter = 'Á';
-						nuevaLinea = linea + caracter;
-
-					}
-					linea = nuevaLinea;
-					ficheroPegar.write(nuevaLinea);
-					numeroLinea++;
-				}
-				}
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
+            // Cerrar los archivos
+            ficheroCopia.close();
+            ficheroPegar.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
